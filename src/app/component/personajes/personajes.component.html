@@ -1,0 +1,18 @@
+<div *ngIf="personajes">
+    <div>
+        <div class="container" >
+            <div class="row" >
+                <div class="col-3 mt-4 mr-4"  *ngFor="let pers of personajes; index as i">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" [src]="pers.image" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title">{{pers.name}}</h4>
+                            <p class="card-text">Especie: {{pers.species}}</p>
+                            <p class="card-text">Identificación: {{pers.id}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
