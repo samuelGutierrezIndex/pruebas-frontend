@@ -10,11 +10,17 @@ import { HttpClientModule } from "@angular/common/http";
 import { ObtenerPersonajeComponent } from './component/obtener-personaje/obtener-personaje.component';
 
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { MenuPrincipalComponent } from './component/menu-principal/menu-principal.component';
 @NgModule({
   declarations: [
     AppComponent,
     PersonajesComponent,
-    ObtenerPersonajeComponent
+    ObtenerPersonajeComponent,
+    NavbarComponent,
+    FooterComponent,
+    MenuPrincipalComponent
   ],
   imports: [
     BrowserModule,

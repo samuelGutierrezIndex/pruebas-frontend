@@ -15,20 +15,32 @@ export class ObtenerPersonajeComponent {
 
   id: any;
 
-  constructor( private service: ObtenerPersonajesService){
+  constructor(private service: ObtenerPersonajesService) { }
 
-  }
-
-  ngOnInit():void{
-    this.service.getASingleCharacter().subscribe(resp =>{
+  ngOnInit(): void {
+    this.service.getASingleCharacter().subscribe(resp => {
       this.personajes = resp.results;
-      
+
     })
   }
 
-  getMostrar(id: any){
-    this.item = this.personajes[id-1];
-    console.log(this.item);
+  public bandera: boolean = false;
+  getMostrar(id: any) {
+    if (this.textValido) {
+      this.item = this.personajes[id - 1];
+      console.log(this.item);
+      this.bandera = true;
+    } else {
+      if (this.textValido && id == 0) {
+        alert("Debe ingresar una opcion valida")
+      }
+
+    }
+  }
+
+  public textValido: boolean = false;
+  validarTexto(text: string) {
+    this.textValido = !!text;
   }
 
 }

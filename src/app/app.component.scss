@@ -1,9 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Labrada:wght@200&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  height: 100%;
+}
+
 body {
-    background: radial-gradient(
-    ellipse closest-side,
-    red,
-    yellow 10%,
-    #1e90ff 50%,
-    beige
-  );
+  font-family: 'Labrada', serif;
+  font-size: 1.2rem;
+  min-height: 100%;
+}
+
+.grid-container>* {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.menu {
+  grid-area: menu;
+  background: burlywood;
+}
+
+.personajes {
+  grid-area: personajes;
+  background: brown;
+}
+
+.personajeOpcion {
+  grid-area: personajeOpcion;
+  background: grey;
+}
+
+.footer {
+  grid-area: footer;
+  background: burlywood;
+}
+
+.grid-container {
+  display: grid;
+  gap: 0px;
+  grid-template:
+    "menu"              100px
+    "personajes"        auto
+    "personajeOpcion"   auto
+    "footer"            100px
+  ;
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+
+    // grid-template-columns: auto 200px;
+    // grid-template-rows: 100px auto 100px;
+
+    // grid-template-areas: 
+    //   "menu menu"
+    //   "personajes personajeOpcion"
+    //   "footer footer" ;
+
+    grid-template:
+      "menu menu"                     100px 
+      "personajes personajeOpcion"    auto
+      "footer footer"                 100px /
+        auto   200px
+    ;
+  }
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+
+    grid-template:
+      "menu menu"                     100px 
+      "personajes personajeOpcion"    auto
+      "footer footer"                 100px /
+        auto   300px
+    ;
+
+  }
 }
